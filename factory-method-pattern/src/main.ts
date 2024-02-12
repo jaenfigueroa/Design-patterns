@@ -13,7 +13,7 @@ abstract class Logistica {
     transporte.entregar()
   }
 
-  abstract createTransport(): Transporte
+  abstract createTransport(): Transporte // el metodo factory, sabemos que devuelve un Transporte, pero no nos intereza saber como realiza la entrega
 }
 
 /////////////////////////////////////////////////////////
