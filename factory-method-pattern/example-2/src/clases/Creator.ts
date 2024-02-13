@@ -1,42 +1,41 @@
 import { Manzana, Pera, Producto } from './Product'
 
 /* 
-La clase Creator declara el método de fábrica que se supone que devuelve un objeto de una clase Producto.
-Las subclases de Creator suelen proporcionar la implementación de este método.
+  La clase Creator declara el método de fábrica que se supone que devuelve un objeto de una clase Producto.
+  Las subclases de Creator suelen proporcionar la implementación de este método.
 */
 export abstract class Creator {
   /* 
-  Ten en cuenta que el Creator también puede proporcionar alguna implementación predeterminada del
-  método de fábrica.
+    Ten en cuenta que el Creator también puede proporcionar alguna implementación predeterminada del
+    método de fábrica.
   */
   public abstract factoryMethod(): Producto
 
-  /**
-   * Also note that, despite its name, the Creator's primary responsibility is
-   * not creating products. Usually, it contains some core business logic that
-   * relies on Product objects, returned by the factory method. Subclasses can
-   * indirectly change that business logic by overriding the factory method
-   * and returning a different type of product from it.
-   */
-  public someOperation(): string {
-    // Call the factory method to create a Product object.
+  /* 
+    También ten en cuenta que, a pesar de su nombre, la responsabilidad principal del Creator no es
+    crear productos. Por lo general, contiene alguna lógica empresarial central que
+    se basa en objetos Producto, devueltos por el método de fábrica. Las subclases pueden
+    cambiar indirectamente esa lógica empresarial anulando el método de fábrica
+    y devolviendo un tipo de producto diferente desde él.
+  */
+  public algunaOperacion(): string {
+    // Llama al método de fábrica para crear un objeto Producto.
     const product = this.factoryMethod()
-    // Now, use the product.
+    // Ahora, usa el producto.
     return `Creator: The same creator's code has just worked with ${product.operacion()}`
   }
 }
 
-/**
- * Concrete Creators override the factory method in order to change the
- * resulting product's type.
- */
+/* 
+  Los Creadores Concretos anulan el método de fábrica para cambiar el
+  tipo de producto resultante.
+*/
 export class ConcreteCreator1 extends Creator {
-  /**
-   * Note that the signature of the method still uses the abstract product
-   * type, even though the concrete product is actually returned from the
-   * method. This way the Creator can stay independent of concrete product
-   * classes.
-   */
+  /* 
+    Ten en cuenta que la firma del método sigue utilizando el tipo de producto abstracto,
+    incluso aunque el producto concreto realmente se devuelva desde el método. De esta manera,
+    el Creator puede mantenerse independiente de las clases de productos concretos.
+  */
   public factoryMethod(): Producto {
     return new Manzana()
   }
