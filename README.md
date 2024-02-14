@@ -3,7 +3,7 @@ Source: https://refactoring.guru/es/
 ## Patrones de creación
 
 - [x] Factory Method
-- [ ] Abstract Factory
+- [x] Abstract Factory
 - [ ] Builder
 - [ ] Prototype
 - [ ] Singleton
