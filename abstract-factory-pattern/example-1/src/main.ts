@@ -18,6 +18,7 @@ class SillaVictoriana extends Silla {
   }
 }
 
+// --------------------------------------------------------------
 abstract class Mesa {
   // Metodos
   abstract tienePatas(): boolean
@@ -42,6 +43,7 @@ class MesaVictoriana extends Mesa {
   }
 }
 
+// --------------------------------------------------------------
 abstract class Sofa {
   // Metodos
   abstract tienePatas(): boolean
@@ -74,7 +76,7 @@ interface MueblesFactory {
   crearMesa(): Mesa
   crearSofa(): Sofa
 }
-
+// --------------------------------------------------------------
 class MueblesModernosFactory implements MueblesFactory {
   crearSilla(): Silla {
     return new SillaModerna()
@@ -86,7 +88,7 @@ class MueblesModernosFactory implements MueblesFactory {
     return new SofaModerno()
   }
 }
-
+// --------------------------------------------------------------
 class MueblesVictorianosFactory implements MueblesFactory {
   crearSilla(): Silla {
     return new SillaVictoriana()
