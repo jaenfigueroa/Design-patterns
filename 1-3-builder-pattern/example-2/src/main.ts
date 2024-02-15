@@ -1,18 +1,18 @@
 /**
- * The Builder interface specifies methods for creating the different parts of
- * the Product objects.
+ * La interfaz Builder especifica métodos para crear las diferentes partes de
+ * los objetos Product.
  */
 interface Builder {
-  producePartA(): void;
-  producePartB(): void;
-  producePartC(): void;
+  producePartA(): void; // Example --> ensamblar motor
+  producePartB(): void; // Example --> ensamblar ruedas
+  producePartC(): void; // Example --> ensamblar asientos
 }
-
+ 
 /**
-* The Concrete Builder classes follow the Builder interface and provide
-* specific implementations of the building steps. Your program may have several
-* variations of Builders, implemented differently.
-*/
+ * Las clases Concrete Builder siguen la interfaz Builder y proporcionan
+ * implementaciones específicas de los pasos de construcción. Su programa puede tener varios
+ * variaciones de Builders, implementadas de manera diferente.
+ */
 class ConcreteBuilder1 implements Builder {
   private product: Product1;
 
