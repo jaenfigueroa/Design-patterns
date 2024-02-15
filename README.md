@@ -4,7 +4,7 @@ Source: https://refactoring.guru/es/
 
 - [x] [Factory Method](https://refactoring.guru/es/design-patterns/factory-method)
 - [x] [Abstract Factory](https://refactoring.guru/es/design-patterns/abstract-factory)
-- [ ] [Builder](https://refactoring.guru/es/design-patterns/builder)
+- [x] [Builder](https://refactoring.guru/es/design-patterns/builder)
 - [ ] Prototype
 - [ ] Singleton
 

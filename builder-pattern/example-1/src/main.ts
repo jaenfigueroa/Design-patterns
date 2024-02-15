@@ -84,7 +84,6 @@ class ManualBuilder implements Builder {
 
   getProduct(): Manual {
     // Devuelve el manual y rearma el constructor.
-
     const producto = this.manual;
     // this.reset();
 
@@ -122,10 +121,12 @@ class Aplication {
   makeCar() {
     const director: Director = new Director();
     
+    // contruir el coche
     const carBuilder: CarBuilder = new CarBuilder();
-    const car:Car = CarBuilder.getProduct();
     // const car: Car = director.constructSportsCar(carBuilder);
+    const car: Car = carBuilder.getProduct();
     
+    // construir el manual
     const manualBuilder: ManualBuilder = new ManualBuilder();
     const manual: Manual = manualBuilder.getProduct();
   }
