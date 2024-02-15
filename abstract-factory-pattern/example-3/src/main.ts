@@ -41,6 +41,7 @@ class ConcreteFactory2 implements AbstractFactory { // example --> MacFactory
   }
 }
 
+// -----------------------------------------------------------------------------------------------------------
 /**
  * Cada producto distinto de una familia de productos debe tener una interfaz base. Todos
  * las variantes del producto deben implementar esta interfaz.
@@ -63,6 +64,9 @@ class ConcreteProductA2 implements AbstractProductA { // example --> MacButton
     return 'The result of the product A2.'
   }
 }
+
+// -----------------------------------------------------------------------------------------------------------
+
 /**
  * Aquí está la interfaz base de otro producto. Todos los productos pueden interactuar
  * entre sí, pero la interacción adecuada es posible solo entre productos de la misma
@@ -117,6 +121,8 @@ class ConcreteProductB2 implements AbstractProductB { // example --> MacCheckbox
     return `The result of the B2 collaborating with the (${result})`
   }
 }
+
+// -----------------------------------------------------------------------------------------------------------
 
 /**
  * El código del cliente trabaja con fábricas y productos solo a través de tipos abstractos:
