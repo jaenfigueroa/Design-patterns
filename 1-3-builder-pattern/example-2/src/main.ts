@@ -1,6 +1,6 @@
 /**
  * La interfaz Builder especifica métodos para crear las diferentes partes de
- * los objetos Product.
+ * los objetos Producto.
  */
 interface Builder {
   producePartA(): void; // Example --> ensamblar motor
@@ -10,16 +10,16 @@ interface Builder {
  
 /**
  * Las clases Concrete Builder siguen la interfaz Builder y proporcionan
- * implementaciones específicas de los pasos de construcción. Su programa puede tener varios
+ * implementaciones específicas de los pasos de construcción. Tu programa puede tener varias
  * variaciones de Builders, implementadas de manera diferente.
  */
 class ConcreteBuilder1 implements Builder {
   private product: Product1;
 
   /**
-   * A fresh builder instance should contain a blank product object, which is
-   * used in further assembly.
-   */
+     * Una nueva instancia de constructor debe contener un objeto producto en blanco, que es
+     * utilizado en el ensamblaje posterior.
+     */
   constructor() {
       this.reset();
   }
@@ -29,8 +29,8 @@ class ConcreteBuilder1 implements Builder {
   }
 
   /**
-   * All production steps work with the same product instance.
-   */
+     * Todos los pasos de producción trabajan con la misma instancia de producto.
+     */
   public producePartA(): void {
       this.product.parts.push('PartA1');
   }
@@ -43,20 +43,20 @@ class ConcreteBuilder1 implements Builder {
       this.product.parts.push('PartC1');
   }
 
-  /**
-   * Concrete Builders are supposed to provide their own methods for
-   * retrieving results. That's because various types of builders may create
-   * entirely different products that don't follow the same interface.
-   * Therefore, such methods cannot be declared in the base Builder interface
-   * (at least in a statically typed programming language).
-   *
-   * Usually, after returning the end result to the client, a builder instance
-   * is expected to be ready to start producing another product. That's why
-   * it's a usual practice to call the reset method at the end of the
-   * `getProduct` method body. However, this behavior is not mandatory, and
-   * you can make your builders wait for an explicit reset call from the
-   * client code before disposing of the previous result.
-   */
+ /**
+     * Los Constructores Concretos deben proporcionar sus propios métodos para
+     * recuperar resultados. Esto se debe a que varios tipos de constructores pueden crear
+     * productos completamente diferentes que no siguen la misma interfaz.
+     * Por lo tanto, tales métodos no pueden declararse en la interfaz Builder base
+     * (al menos en un lenguaje de programación tipado estáticamente).
+     *
+     * Por lo general, después de devolver el resultado final al cliente, se espera que una instancia del constructor
+     * esté lista para comenzar a producir otro producto. Es por eso
+     * una práctica habitual llamar al método de reset al final del
+     * cuerpo del método `getProduct`. Sin embargo, este comportamiento no es obligatorio, y
+     * puedes hacer que tus constructores esperen una llamada de reset explícita desde el
+     * código del cliente antes de eliminar el resultado anterior.
+     */
   public getProduct(): Product1 {
       const result = this.product;
       this.reset();
@@ -65,13 +65,13 @@ class ConcreteBuilder1 implements Builder {
 }
 
 /**
-* It makes sense to use the Builder pattern only when your products are quite
-* complex and require extensive configuration.
-*
-* Unlike in other creational patterns, different concrete builders can produce
-* unrelated products. In other words, results of various builders may not
-* always follow the same interface.
-*/
+ * Tiene sentido usar el patrón Builder solo cuando tus productos son bastante
+ * complejos y requieren una configuración extensa.
+ *
+ * A diferencia de en otros patrones creacionales, diferentes constructores concretos pueden producir
+ * productos no relacionados. En otras palabras, los resultados de varios constructores pueden no
+ * siempre seguir la misma interfaz.
+ */
 class Product1 {
   public parts: string[] = [];
 
@@ -81,27 +81,27 @@ class Product1 {
 }
 
 /**
-* The Director is only responsible for executing the building steps in a
-* particular sequence. It is helpful when producing products according to a
-* specific order or configuration. Strictly speaking, the Director class is
-* optional, since the client can control builders directly.
-*/
+ * El Director solo es responsable de ejecutar los pasos de construcción en un
+ * secuencia particular. Es útil al producir productos según un
+ * orden o configuración específica. Estrictamente hablando, la clase Director es
+ * opcional, ya que el cliente puede controlar los constructores directamente.
+ */
 class Director {
   private builder: Builder;
 
   /**
-   * The Director works with any builder instance that the client code passes
-   * to it. This way, the client code may alter the final type of the newly
-   * assembled product.
-   */
+     * El Director trabaja con cualquier instancia de constructor que el código del cliente pase
+     * a él. De esta manera, el código del cliente puede alterar el tipo final del producto recién
+     * ensamblado.
+     */
   public setBuilder(builder: Builder): void {
       this.builder = builder;
   }
 
   /**
-   * The Director can construct several product variations using the same
-   * building steps.
-   */
+     * El Director puede construir varias variaciones de productos utilizando los mismos
+     * pasos de construcción.
+     */
   public buildMinimalViableProduct(): void {
       this.builder.producePartA();
   }
@@ -114,10 +114,10 @@ class Director {
 }
 
 /**
-* The client code creates a builder object, passes it to the director and then
-* initiates the construction process. The end result is retrieved from the
-* builder object.
-*/
+ * El código del cliente crea un objeto constructor, lo pasa al director y luego
+ * inicia el proceso de construcción. El resultado final se recupera del
+ * objeto constructor.
+ */
 function clientCode(director: Director) {
   const builder = new ConcreteBuilder1();
   director.setBuilder(builder);
@@ -130,7 +130,7 @@ function clientCode(director: Director) {
   director.buildFullFeaturedProduct();
   builder.getProduct().listParts();
 
-  // Remember, the Builder pattern can be used without a Director class.
+  // Recuerda, el patrón Builder se puede usar sin una clase Director.
   console.log('Custom product:');
   builder.producePartA();
   builder.producePartC();
