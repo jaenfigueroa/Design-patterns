@@ -12,7 +12,7 @@ Source: https://refactoring.guru/es/
 
 ## Patrones estructurales
 
-- [ ] Adapter
+- [ ] [Adapter](https://refactoring.guru/es/design-patterns/adapter)
 - [ ] Bridge
 - [ ] Composite
 - [ ] Decorator
