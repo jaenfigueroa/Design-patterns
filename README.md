@@ -8,7 +8,7 @@ Source: https://refactoring.guru/es/
 - [x] [Abstract Factory](https://refactoring.guru/es/design-patterns/abstract-factory)
 - [x] [Builder](https://refactoring.guru/es/design-patterns/builder)
 - [x] [Prototype](https://refactoring.guru/es/design-patterns/prototype)
-- [ ] Singleton
+- [ ] [Singleton](https://refactoring.guru/es/design-patterns/singleton)
 
 ## Patrones estructurales
 
