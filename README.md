@@ -7,7 +7,7 @@ Source: https://refactoring.guru/es/
 - [x] [Factory Method](https://refactoring.guru/es/design-patterns/factory-method)
 - [x] [Abstract Factory](https://refactoring.guru/es/design-patterns/abstract-factory)
 - [x] [Builder](https://refactoring.guru/es/design-patterns/builder)
-- [ ] [Prototype](https://refactoring.guru/es/design-patterns/prototype)
+- [x] [Prototype](https://refactoring.guru/es/design-patterns/prototype)
 - [ ] Singleton
 
 ## Patrones estructurales
