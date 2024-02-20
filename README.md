@@ -18,7 +18,7 @@ Estos patrones explican cómo ensamblar objetos y clases en estructuras más gra
 
 - [ ] [Adapter](https://refactoring.guru/es/design-patterns/adapter)
 - [ ] Bridge
-- [ ] Composite
+- [ ] [Composite](https://refactoring.guru/es/design-patterns/composite)
 - [ ] Decorator
 - [ ] Facade
 - [ ] Flyweight
