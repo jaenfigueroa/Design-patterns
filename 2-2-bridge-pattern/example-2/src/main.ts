@@ -3,7 +3,7 @@
  * Mantiene una referencia a un objeto de la jerarquía de Implementación y delega t0do el trabajo real a este objeto.
  */
 
-class Abstraction {
+class Abstraction { // Example --> RemoteControl
   protected implementation: Implementation;
 
   constructor(implementation: Implementation) {
@@ -20,12 +20,14 @@ class Abstraction {
  * Puedes extender la Abstracción sin cambiar las clases de Implementación.
  */
 
-class ExtendedAbstraction extends Abstraction {
+class ExtendedAbstraction extends Abstraction { // Example --> AdvancedRemoteControl
   public operation(): string {
       const result = this.implementation.operationImplementation();
       return `ExtendedAbstraction: Extended operation with:\n${result}`;
   }
 }
+
+// ------------------------------------------------------------------------------------------
 
 /**
  * La Implementación define la interfaz para todas las clases de implementación.
@@ -35,7 +37,7 @@ class ExtendedAbstraction extends Abstraction {
  * basadas en esas primitivas.
  */
 
-interface Implementation {
+interface Implementation { // Example --> Device
   operationImplementation(): string;
 }
 
@@ -44,17 +46,19 @@ interface Implementation {
  * implementa la interfaz de Implementación utilizando la API de esa plataforma.
  */
 
-class ConcreteImplementationA implements Implementation {
+class ConcreteImplementationA implements Implementation { // Example --> TV
   public operationImplementation(): string {
       return 'ConcreteImplementationA: Here\'s the result on the platform A.';
   }
 }
 
-class ConcreteImplementationB implements Implementation {
+class ConcreteImplementationB implements Implementation { // Example --> Radio
   public operationImplementation(): string {
       return 'ConcreteImplementationB: Here\'s the result on the platform B.';
   }
 }
+
+// ------------------------------------------------------------------------------------------
 
 /**
  * Excepto en la fase de inicialización, donde un objeto de Abstracción se vincula
@@ -78,8 +82,6 @@ function clientCode(abstraction: Abstraction) {
 let implementation = new ConcreteImplementationA();
 let abstraction = new Abstraction(implementation);
 clientCode(abstraction);
-
-console.log('');
 
 implementation = new ConcreteImplementationB();
 abstraction = new ExtendedAbstraction(implementation);
