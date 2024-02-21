@@ -19,7 +19,7 @@ Estos patrones explican cómo ensamblar objetos y clases en estructuras más gra
 - [x] [Adapter](https://refactoring.guru/es/design-patterns/adapter) permite la colaboración entre objetos con interfaces incompatibles.
 - [x] [Bridge](https://refactoring.guru/es/design-patterns/bridge) permite dividir una clase grande, o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.
 - [x] [Composite](https://refactoring.guru/es/design-patterns/composite) permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.
-- [ ] Decorator
+- [ ] [Decorator](https://refactoring.guru/es/design-patterns/decorator) te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.
 - [ ] Facade
 - [ ] Flyweight
 - [ ] Proxy

@@ -36,7 +36,7 @@ class Paquete implements Pedido {
 
 // ----------------------------------------------------------------------------------------------------
 
-// USO
+// USO: queremos calcular el precio total de un paquete que puede contener productos u otros paquetes
 
 const paquete1 = new Paquete();
 const producto1 = new Producto('Producto 1', 100);
@@ -47,16 +47,20 @@ paquete1.add(producto2);
 
 const paquete2 = new Paquete();
 const producto3 = new Producto('Producto 3', 300);
-const producto4 = new Producto('Producto 4', 300);
-paquete1.add(producto3);
+const producto4 = new Producto('Producto 4', 400);
+paquete2.add(producto3);
 paquete2.add(producto4);
 
+
 const paquete3 = new Paquete();
-const producto5 = new Producto('Producto 5', 300);
+const producto5 = new Producto('Producto 5', 200);
+const producto6 = new Producto('Producto 5', 500);
 paquete3.add(producto5);
+paquete3.add(producto6);
+
 
 paquete2.add(paquete3);
 paquete1.add(paquete2);
 
 
-console.log(paquete1.precioTotal()); // 1200
+console.log(paquete1.precioTotal()); // 1700
