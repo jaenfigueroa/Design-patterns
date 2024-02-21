@@ -16,7 +16,7 @@ Estos patrones proporcionan mecanismos de creación de objetos que incrementan l
 
 Estos patrones explican cómo ensamblar objetos y clases en estructuras más grandes, mientras se mantiene la flexibilidad y eficiencia de la estructura.
 
-- [ ] [Adapter](https://refactoring.guru/es/design-patterns/adapter)
+- [x] [Adapter](https://refactoring.guru/es/design-patterns/adapter)
 - [ ] Bridge
 - [ ] [Composite](https://refactoring.guru/es/design-patterns/composite)
 - [ ] Decorator
