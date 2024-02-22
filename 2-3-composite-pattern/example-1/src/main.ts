@@ -1,3 +1,4 @@
+///⭐
 interface Pedido {
   precioTotal(): number;
 }
