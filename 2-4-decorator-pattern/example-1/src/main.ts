@@ -1,3 +1,5 @@
+/// AAA111
+
 // El Componente declara la interfaz común tanto para wrappers como para objetos envueltos.
 interface Componente {
   ejecutar(): string;
