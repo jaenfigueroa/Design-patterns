@@ -1,36 +1,49 @@
+// El Componente declara la interfaz común tanto para wrappers como para objetos envueltos.
 interface Componente {
   ejecutar(): string;
 }
 
+//Componente Concreto es una clase de objetos envueltos. Define el comportamiento básico,
+// que los decoradores pueden alterar.
 class ComponenteConcreto implements Componente {
   ejecutar(): string {
     return 'ComponenteConcreto';
   }
 }
 
-class Decorador implements Componente {
-  private envoltorio: Componente;
+// ------------------------------------------------------------------------------------------
+
+// El Decorador base tiene una referencia al objeto envuelto. La implementación por defecto de
+// los métodos del decorador es reenviar el llamado al objeto envuelto.
+class DecoradorBase implements Componente {
+  private envuelto: Componente;
 
   constructor(envoltorio: Componente) {
-    this.envoltorio = envoltorio;
+    this.envuelto = envoltorio;
   }
 
   ejecutar(): string {
-    return this.envoltorio.ejecutar();
+    return this.envuelto.ejecutar();
   }
 }
 
-class DecoradorConcretoA extends Decorador {
+// Los Decoradores concretos llaman al método envuelto y alteran su resultado de alguna manera.
+class DecoradorConcretoA extends DecoradorBase {
   ejecutar(): string {
     return `DecoradorConcretoA(${super.ejecutar()})`;
   }
 }
 
-class DecoradorConcretoB extends Decorador {
+class DecoradorConcretoB extends DecoradorBase {
   ejecutar(): string {
     return `DecoradorConcretoB(${super.ejecutar()})`;
   }
 }
+
+// ------------------------------------------------------------------------------------------
+
+// El código cliente puede envolver componentes en varios decoradores, desde objetos
+// simples hasta objetos decoradores compuestos.
 
 const componente = new ComponenteConcreto();
 console.log(componente.ejecutar()); // ComponenteConcreto
