@@ -1,4 +1,4 @@
-///⭐
+//⭐
 
 import Circulo from "./Circulo";
 import Cuadradro from "./Cuadrado";
