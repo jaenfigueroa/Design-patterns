@@ -21,8 +21,10 @@ Estos patrones explican cómo ensamblar objetos y clases en estructuras más gra
 - [x] [Composite](https://refactoring.guru/es/design-patterns/composite) permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.
 - [X] [Decorator](https://refactoring.guru/es/design-patterns/decorator) te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades. Permite añadir dinámicamente nuevos comportamientos a objetos colocándolos dentro de objetos especiales que los envuelven (_wrappers_).
 - [x] [Facade](https://refactoring.guru/es/design-patterns/facade) proporciona una interfaz simplificada a una biblioteca, un framework o cualquier otro grupo complejo de clases.
-- [ ] [Flyweight](https://refactoring.guru/es/design-patterns/flyweight) te permite mantener más objetos dentro de la cantidad disponible de RAM compartiendo las partes comunes del estado entre varios objetos en lugar de mantener toda la información en cada objeto.
-- [ ] Proxy
+- [x] [Flyweight](https://refactoring.guru/es/design-patterns/flyweight) te permite mantener más objetos dentro de la cantidad disponible de RAM compartiendo las partes comunes del estado entre varios objetos en lugar de mantener toda la información en cada objeto.
+- [ ] [Proxy](https://refactoring.guru/es/design-patterns/proxy) permite proporcionar un sustituto o marcador de posición para otro objeto. Un proxy controla el acceso al objeto original, permitiéndote hacer algo antes o después de que la solicitud llegue al objeto original.
+
+
 
 ## Patrones de comportamiento
 
