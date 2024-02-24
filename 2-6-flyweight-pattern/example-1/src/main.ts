@@ -1,3 +1,5 @@
+// ⭐
+
 // ANTES
 class Particula {
   coordenadas: number[]; // 8B
