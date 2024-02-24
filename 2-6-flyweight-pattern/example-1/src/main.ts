@@ -34,6 +34,8 @@ Como resultado, necesitarás menos de estos objetos, ya que sólo se diferencian
 que cuenta con muchas menos variaciones que el extrínseco.
 */
 
+// 1. Creamos una clase para el estado intrínseco (que no cambia)
+// solo se crea una vez y se referencia
 class Particula {
   // coordenadas: number[]; // 8B <-- se retira
   // vector: number[]; // 16B <-- se retira
@@ -51,6 +53,8 @@ class Particula {
   dibujar(coordenadas: number[], canvas: unknown) {}
 }
 
+// 2. Creamos una clase para el estado extrínseco (que cambia)
+// se crea cada vez que se necesite una nueva particula en distinto lugar
 class ParticulaEnMovimiento {
   particula: Particula; // 21KB (4B nomas ya que esto se referencia, no se vuelve a crear) <-- se ha agregado
 
@@ -58,7 +62,11 @@ class ParticulaEnMovimiento {
   vector: number[]; // 16B <- ponemos aqui
   velocidad: number; //4B <- ponemos aqui
 
-  constructor(/*  */) {  }
+  constructor(particula: Particula,/* ... */ ) {
+    this.particula = particula;
+
+    /* ... */
+  }
 
   mover() {
     this.particula.mover(this.coordenadas, this.vector, this.velocidad);
@@ -78,5 +86,4 @@ DESPUES: COSTE DE MEMORIA POR 1 MILLON DE PARTICULAS:
   ParticulaEnMovimiento = 32 B * 1 000 000 = 32 MB (si se crean 1 millon de particulas en movimiento)
 
   pesoTotal = 21KB + 32 MB  = 32 MB <-- 1 millon de particulas
-
 */
